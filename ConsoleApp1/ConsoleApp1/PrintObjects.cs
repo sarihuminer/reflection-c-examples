@@ -13,6 +13,13 @@ namespace ConsoleApp1
 
         public static void MyPrint(object o)
         {
+            if (o.GetType().IsArray)
+            {
+                foreach (var item in o as IEnumerable)
+                {
+                    MyPrint(item);
+                }
+            }
 
             FieldInfo[] fieldInfo = null;
             fieldInfo = o.GetType().GetFields();

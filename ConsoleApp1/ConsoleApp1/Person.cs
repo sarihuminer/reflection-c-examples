@@ -10,5 +10,15 @@ namespace ConsoleApp1
     {
         public int age;
         public Name name;
+
+        public Person(int age,Name name)
+        {
+            this.age = age;
+            this.name = name;
+        }
+        public Person()
+        {
+                
+        }
     }
 }
