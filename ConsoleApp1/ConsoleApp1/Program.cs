@@ -21,14 +21,21 @@ namespace ConsoleApp1
             personArray[0] = p;
             personArray[1] = p2;
 
+            List<Person> personList = new List<Person>();
+            personList.Add(p);
+            personList.Add(p2);
+
             //print simple class
-            // PrintObjects.MyPrint(n);
+             PrintObjects.MyPrint(n);
 
             //print class that contain class 
-            // PrintObjects.MyPrint(p);
+             PrintObjects.MyPrint(p);
 
             //print array object
             PrintObjects.MyPrint(personArray);
+
+            //print list of object
+             PrintObjects.MyPrint(personList);
         }
     }
 }

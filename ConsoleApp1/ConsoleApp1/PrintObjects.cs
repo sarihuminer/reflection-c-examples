@@ -13,7 +13,7 @@ namespace ConsoleApp1
 
         public static void MyPrint(object o)
         {
-            if (o.GetType().IsArray)
+            if (o.GetType().IsArray ||o is IEnumerable)
             {
                 foreach (var item in o as IEnumerable)
                 {
@@ -29,13 +29,13 @@ namespace ConsoleApp1
                 var prop = item.GetValue(o);
                 if (prop == null)
                 {
-                    Console.WriteLine(item.Name + ": NULL");
+                    Console.Write(item.Name + ": NULL");
                 }
                 else
                 {
                     if (prop.GetType().Equals(typeof(string)) || prop.GetType().IsPrimitive)
                     {
-                        Console.WriteLine(item.Name + ": " + prop.ToString());
+                        Console.Write(item.Name + ": " + prop.ToString()+" ");
                     }
                     else
                     {
@@ -44,15 +44,8 @@ namespace ConsoleApp1
 
                 }
             }
-
-
-            //if (prop is IEnumerable)
-            //{
-            //    foreach (var listitem in prop as IEnumerable)
-            //    {
-            //        Console.WriteLine("Item: " + listitem.ToString());
-            //    }
-            //}
+            Console.WriteLine();
+      
         }
 
     }
